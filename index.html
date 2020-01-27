@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timing functions using javascript</title>
+        <script type="text/javascript">
+        //setTimeout function -> executes statement ONCE after an interval
+        //ClearTimeout function -> clears a setTimeOut function/stops the functionality
+        //setInterval function -> executes statements during a certain interval
+        //clearInterval function -> clears setInterval functionality
+        var myID = 0; //a global variable
+        var seconds = 0; //a global variable
+        function display_text(){
+            document.getElementById("Hello").innerHTML= seconds + " seconds"; //will be executed after an interval of 1 sec when button is clicked
+            seconds++;
+        }
+       function start(){
+          //myID = window.setTimeout(display_text, 3000); //execution of the function will occur after 3 seconds.
+          myID = window.setInterval(display_text, 1000);
+       }
+       function stop(){
+           //window.clearTimeout(myID); //takes in a variable ID as argument
+           window.clearInterval(myID);
+       }
+        </script>
+        <style>
+            #Hello{
+                color: darkblue;
+            }
+        </style>
+    </head>
+    <body bgcolor="cream">
+        <h1>Implementing timing functions using Javascript language</h1>
+        <button id= "button1" onclick ="start()">Begin</button>
+<br><br>
+<p id="Hello"> Hello! </p>
+<button id="button2" onclick="stop()">Stop</button>
+    </body>
+</html>
